@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1280, height=720, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    
+    
+    
+    <link rel="icon" type="image/jpg" href="goof.jpg" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=0"
+    />
+    <meta name="description" content="2D drifting game" />
+    <title>Drift Racers</title>
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="preconnecst" href="https://fonts.googleapis.com" />
+    <link rel="preconnecst" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <div class="outer-wrapper">
+    <body>
+      <audio id="music" src="audio.mp3" autoplay loop></audio>
+      <canvas width="1280px" height="720px"> </canvas>
+      <div class="overlay">
+        <p class = speedcar>0mph</p>
+        <header>
+          <h1>Drift Racers</h1>
+          
+          <p class="instructions">Drift and Race! Use space and arrow keys. Don't slow too much or get off the track. Press Free Drive to drive freely. (Use fullscreen on a computer for best gameplay)</p>
+        </header>
+        <button class="settings">Settings</button>
+        <button class="freedrive">Free Drive</button>
+        <button class="changetrack">Change track</button>
+        <button class="performance">Performance Mode</button>
+        <button class="dif">Speed: Medium</button>
+        <button class="players">Players: 1</button>
+        <button class="cleartracks">Clear Tire Marks</button>
+        <button class="mute">Audio</button>
+        <button class="size">Button Size</button>
+        <div class="rect"></div>
+        <div class="car">
+          
+          <img class="car-img" src="car.png" draggable="false" />
+        </div>
+        <div class="car2">
+          <img class="car2-img" src="car2.png" draggable="false" />
+        </div>
+        <p class="score-display">Score: 0</p>
+        <p class="score-display2">Previous Score: 0</p>
+        <p class="score-display3">Best Score: 0</p>
+        <p class="score-display4">Player 1 Laps: 0</p>
+        <p class="score-display5">Player 2 Laps: 0</p>
+        <div class="drift-meter-container">
+          <div class="drift-meter-fill"></div>
+        </div>
+        <p class ="speed">Speed:<br>0mph</p>
+        <div class="mobile-controls">
+          <div class="controls-left">
+            <button class="control-button arrow-left">
+              <img src="./arrow-left.png" alt="Left" draggable="false" />
+            </button>
+            <button class="control-button arrow-right">
+              <img src="./arrow-right.png" alt="Right" draggable="false" />
+            </button>
+          </div>
+          <div class="controls-right">
+            <button class="control-button arrow-down">
+              <img src="./arrow-down.png" alt="Brake" draggable="false" />
+            </button>
+            <button class="control-button arrow-up">
+              <img src="./arrow-up.png" alt="Gas" draggable="false" />
+            </button>
+          </div>
+        </div>
+      </div>
+      <script src="drift.js"></script>
+    </body>
+  </div>
+</html>
