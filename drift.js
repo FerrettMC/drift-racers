@@ -245,7 +245,7 @@ if (freedrive) {
   document.body.classList.add("freedrive-mode");
 } else {
   document.body.classList.remove("freedrive-mode");
-  document.querySelector(".score-display5").style.display = "block";
+  document.querySelector(".player2-laps").style.display = "block";
 
   switch (track) {
     case 1:
@@ -851,8 +851,8 @@ const updateCar = () => {
     document.querySelector(".speedcar").style.left = (car.xPos - 19) + "px";
     document.querySelector(".speedcar").textContent = `${speedlabel}mph`;
     if (twoplayer) {
-      document.querySelector(".score-display3").textContent = `Best Score: 0`;
-      document.querySelector(".score-display2").textContent = `Previous Score: 0`;
+      document.querySelector(".bestscore").textContent = `Best Score: 0`;
+      document.querySelector(".prevscore").textContent = `Previous Score: 0`;
     }
     
     car.isReversing = car.speed >= 0 ? false : true;
@@ -996,7 +996,7 @@ const updateCar = () => {
 
     if (track === 1 && lapcheck1 && !lapCooldown && !freedrive) {
       laps += 1;
-      document.querySelector(".score-display4").textContent = `Player 1 Laps: ${laps}`;
+      document.querySelector(".player1-laps").textContent = `Player 1 Laps: ${laps}`;
       lapCooldown = true;
 
       setTimeout(() => {
@@ -1005,7 +1005,7 @@ const updateCar = () => {
     }
     if (track === 2 && lapcheck2 && !lapCooldown && !freedrive) {
       laps += 1;
-      document.querySelector(".score-display4").textContent = `Player 1 Laps: ${laps}`;
+      document.querySelector(".player1-laps").textContent = `Player 1 Laps: ${laps}`;
       lapCooldown = true;
 
       setTimeout(() => {
@@ -1015,7 +1015,7 @@ const updateCar = () => {
 
     if (track === 3 && lapcheck3 && !lapCooldown && !freedrive) {
       laps += 1;
-      document.querySelector(".score-display4").textContent = `Player 1 Laps: ${laps}`;
+      document.querySelector(".player1-laps").textContent = `Player 1 Laps: ${laps}`;
       lapCooldown = true;
 
       setTimeout(() => {
@@ -1061,9 +1061,9 @@ const updateCar = () => {
         car.driftAngle = 0;
         car.angle = resetPosition.angle;
         car.angularVelocity = 0;
-        document.querySelector(".score-display2").textContent = `Previous Score: ${score}`;
+        document.querySelector(".prevscore").textContent = `Previous Score: ${score}`;
         if (score > bestscore) {
-          document.querySelector(".score-display3").textContent = `Best Score: ${score}`;
+          document.querySelector(".bestscore").textContent = `Best Score: ${score}`;
           bestscore = score;
         }
         score = 0;
@@ -1084,9 +1084,9 @@ const updateCar = () => {
         car.driftAngle = 0;
         car.angle = resetPosition.angle;
         car.angularVelocity = 0;
-        document.querySelector(".score-display2").textContent = `Previous Score: ${score}`;
+        document.querySelector(".prevscore").textContent = `Previous Score: ${score}`;
         if (score > bestscore) {
-          document.querySelector(".score-display3").textContent = `Best Score: ${score}`;
+          document.querySelector(".bestscore").textContent = `Best Score: ${score}`;
           bestscore = score;
         }
         score = 0;
@@ -1107,9 +1107,9 @@ const updateCar = () => {
         car.driftAngle = 0;
         car.angle = resetPosition.angle;
         car.angularVelocity = 0;
-        document.querySelector(".score-display2").textContent = `Previous Score: ${score}`;
+        document.querySelector(".prevscore").textContent = `Previous Score: ${score}`;
         if (score > bestscore) {
-          document.querySelector(".score-display3").textContent = `Best Score: ${score}`;
+          document.querySelector(".bestscore").textContent = `Best Score: ${score}`;
           bestscore = score;
         }
         score = 0;
@@ -1142,9 +1142,9 @@ const updateCar = () => {
       car.driftAngle = 0;
       car.angle = resetPosition.angle;
       car.angularVelocity = 0;
-      document.querySelector(".score-display2").textContent = `Previous Score: ${score}`;
+      document.querySelector(".prevscore").textContent = `Previous Score: ${score}`;
       if (score > bestscore) {
-          document.querySelector(".score-display3").textContent = `Best Score: ${score}`;
+          document.querySelector(".bestscore").textContent = `Best Score: ${score}`;
           bestscore = score;
         }
       score = 0;
@@ -1152,7 +1152,7 @@ const updateCar = () => {
       }
     }
     
-    document.querySelector(".score-display4").textContent = `Player 1 Laps: ${laps}`;
+    document.querySelector(".player1-laps").textContent = `Player 1 Laps: ${laps}`;
 
     // calculate score
     if (isDrifting) {
@@ -1471,7 +1471,7 @@ const updateCar2 = () => {
 
     if (track === 1 && lap2check1 && !lapCooldown2 && !freedrive) {
       laps2 += 1;
-      document.querySelector(".score-display5").textContent = `Player 2 Laps: ${laps2}`;
+      document.querySelector(".player2-laps").textContent = `Player 2 Laps: ${laps2}`;
       lapCooldown2 = true;
 
       setTimeout(() => {
@@ -1480,7 +1480,7 @@ const updateCar2 = () => {
     }
     if (track === 2 && lap2check2 && !lapCooldown2 && !freedrive) {
       laps2 += 1;
-      document.querySelector(".score-display5").textContent = `Player 2 Laps: ${laps2}`;
+      document.querySelector(".player2-laps").textContent = `Player 2 Laps: ${laps2}`;
       lapCooldown2 = true;
 
       setTimeout(() => {
@@ -1490,7 +1490,7 @@ const updateCar2 = () => {
 
     if (track === 3 && lap2check3 && !lapCooldown2 && !freedrive) {
       laps2 += 1;
-      document.querySelector(".score-display5").textContent = `Player 2 Laps: ${laps2}`;
+      document.querySelector(".player2-laps").textContent = `Player 2 Laps: ${laps2}`;
       lapCooldown2 = true;
 
       setTimeout(() => {
@@ -1590,7 +1590,7 @@ const updateCar2 = () => {
       }
     }
     
-    document.querySelector(".score-display5").textContent = `Player 2 Laps: ${laps2}`;
+    document.querySelector(".player2-laps").textContent = `Player 2 Laps: ${laps2}`;
 
   
     // Turn direction signalling
@@ -1631,41 +1631,41 @@ const animationChecks = () => {
   if (twoplayer) {
     document.querySelector(".speed").style.display = "none";
     document.querySelector(".score-display").style.display = "none";
-    document.querySelector(".score-display2").style.display = "none";
-    document.querySelector(".score-display3").style.display = "none";
-    document.querySelector(".score-display5").style.display = "block";
-    document.querySelector(".score-display4").style.top = "5px";
-    document.querySelector(".score-display5").style.top = "45px";
+    document.querySelector(".prevscore").style.display = "none";
+    document.querySelector(".bestscore").style.display = "none";
+    document.querySelector(".player2-laps").style.display = "block";
+    document.querySelector(".player1-laps").style.top = "5px";
+    document.querySelector(".player2-laps").style.top = "45px";
     carRef2.style.display = twoplayer ? "block" : "none";
     updateCar2();
     renderCar2();
   } else if (!twoplayer) {
     document.querySelector(".speed").style.display = "block";
-    document.querySelector(".score-display5").style.display = "none";
+    document.querySelector(".player2-laps").style.display = "none";
     document.querySelector(".score-display").style.display = "block";
-    document.querySelector(".score-display2").style.display = "block";
-    document.querySelector(".score-display3").style.display = "block";
-    document.querySelector(".score-display4").style.top = "125px";
+    document.querySelector(".prevscore").style.display = "block";
+    document.querySelector(".bestscore").style.display = "block";
+    document.querySelector(".player1-laps").style.top = "125px";
     carRef2.style.display = "none";
   }
   if (freedrive) {
     document.body.style.backgroundPosition = "0px center";
     document.querySelector(".score-display").style.display = "none";
-    document.querySelector(".score-display2").style.display = "none";
-    document.querySelector(".score-display3").style.display = "none";
-    document.querySelector(".score-display5").style.display = "none";
-    document.querySelector(".score-display4").style.display = "none";
+    document.querySelector(".prevscore").style.display = "none";
+    document.querySelector(".bestscore").style.display = "none";
+    document.querySelector(".player2-laps").style.display = "none";
+    document.querySelector(".player1-laps").style.display = "none";
 
   } else {
     document.body.style.backgroundPosition = "145px center";
     if (!twoplayer) {
       document.querySelector(".score-display").style.display = "block";
-      document.querySelector(".score-display2").style.display = "block";
-      document.querySelector(".score-display3").style.display = "block";
-      document.querySelector(".score-display4").style.display = "block";
+      document.querySelector(".prevscore").style.display = "block";
+      document.querySelector(".bestscore").style.display = "block";
+      document.querySelector(".player1-laps").style.display = "block";
       document.querySelector(".speed").style.display = "block";
     } else if (twoplayer) {
-      document.querySelector(".score-display4").style.display = "block";
+      document.querySelector(".player1-laps").style.display = "block";
       
     }
 }
@@ -1689,7 +1689,3 @@ document.addEventListener("keydown", (e) => {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
   }
 });
-
-if (1 + 1 == 2) {
-  1 + 1 == 3;
-}

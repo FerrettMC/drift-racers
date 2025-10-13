@@ -417,7 +417,7 @@ h1 {
   pointer-events: none;
 }
 
-.score-display2 {
+.prevscore {
   position: fixed;
   top: 45px;
   left: 10px;
@@ -434,10 +434,10 @@ h1 {
   transition: transform 0.2s ease;
 }
 
-.score-display2:hover {
+.prevscore:hover {
   transform: scale(1.05);
 }
-.score-display3 {
+.bestscore {
   position: fixed;
   top: 85px;
   left: 10px;
@@ -454,11 +454,11 @@ h1 {
   transition: transform 0.2s ease;
 }
 
-.score-display3:hover {
+.bestscore:hover {
   transform: scale(1.05);
 }
 
-.score-display4 {
+.player1-laps {
   position: fixed;
   top: 125px;
   left: 10px;
@@ -474,11 +474,11 @@ h1 {
   box-shadow: 0 0 5px #00ffcc;
   transition: transform 0.2s ease;
 }
-.score-display4:hover {
+.player1-laps:hover {
   transform: scale(1.05);
 }
 
-.score-display5 {
+.player2-laps {
   position: fixed;
   top: 165px;
   left: 10px;
@@ -494,7 +494,7 @@ h1 {
   box-shadow: 0 0 5px #00ffcc;
   transition: transform 0.2s ease;
 }
-.score-display5:hover {
+.player2-laps:hover {
   transform: scale(1.05);
 }
 
