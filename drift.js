@@ -107,8 +107,8 @@ function updateNames() {
   // Update label text
   document.getElementById("namelabel").textContent = name1;
   document.getElementById("namelabel2").textContent = name2;
-  document.querySelector(".namelabel").style.left = (car.xPos - 3 - textLength ** 1.35) + "px";
-  document.querySelector(".namelabel2").style.left = (car2.xPos - 3 - textLength2 ** 1.35) + "px";
+  document.querySelector(".namelabel").style.left = (car.xPos - 3 - textLength ** 1.4) + "px";
+  document.querySelector(".namelabel2").style.left = (car2.xPos - 3 - textLength2 ** 1.4) + "px";
   document.querySelector(".namelabel2").style.top = (car2.yPos - 25) + "px";
   document.querySelector(".namelabel").style.top = (car.yPos - 25) + "px";
   // Show/hide label based on input length
@@ -884,7 +884,7 @@ const updateCar = () => {
     });
     absy = Math.abs(car.angle);
     document.querySelector(".namelabel").style.top = (car.yPos - 25) + "px";
-    document.querySelector(".namelabel").style.left = (car.xPos - 2 - textLength ** 1.35) + "px";
+    document.querySelector(".namelabel").style.left = (car.xPos - 2 - textLength ** 1.4) + "px";
 
     
     
@@ -1368,7 +1368,7 @@ const updateCar2 = () => {
       }
     });
 
-  document.querySelector(".namelabel2").style.left = (car2.xPos - 2 - textLength2 ** 1.35) + "px";
+  document.querySelector(".namelabel2").style.left = (car2.xPos - 2 - textLength2 ** 1.4) + "px";
   document.querySelector(".namelabel2").style.top = (car2.yPos - 25) + "px";
 
     const drift2Intensity = Math.min(Math.abs(car2.driftAngle), 45);
