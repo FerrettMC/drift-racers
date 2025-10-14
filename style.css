@@ -360,7 +360,7 @@ h1 {
   padding: 0 1rem;
   top: 28rem;
   right: 0.5rem;
-  background-color: rgba(4250, 56, 35, 1);
+  background-color: yellow;
 }
 
 .settings {
@@ -402,10 +402,11 @@ h1 {
   transform: scale(1.05);
 }
 
-.speedcar {
+.namelabel {
   position: fixed; /* or fixed if you want it to stay in place on scroll */
   top: 100px;          /* adjust as needed */
   left: 300px;
+  display: none;
   background: rgba(0, 0, 0, 0.7);
   color: #ffffff;
   font-family: 'Orbitron', sans-serif;
@@ -416,6 +417,56 @@ h1 {
   z-index: 9999;       /* max priority */
   pointer-events: none;
 }
+
+.namelabel2 {
+  position: fixed; /* or fixed if you want it to stay in place on scroll */
+  top: 100px;          /* adjust as needed */
+  left: 300px;
+  display: none;
+  background: rgba(0, 0, 0, 0.7);
+  color: #ffffff;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 6px 10px;
+  border-radius: 6px;
+  z-index: 9999;       /* max priority */
+  pointer-events: none;
+}
+
+.player1nametext {
+  position: absolute; /* or fixed if you want it to stay on screen */
+  top: 32rem;
+  right: 0rem;
+  width: 200px;
+  padding: 12px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-family: sans-serif;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.player1nametext label {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.player1nametext input[type="text"] {
+  width: 100%;
+  margin-bottom: 8px;
+  padding: 6px;
+  font-size: 13px;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+
+
+
 
 .prevscore {
   position: fixed;
