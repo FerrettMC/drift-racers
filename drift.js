@@ -27,6 +27,14 @@ document.querySelector('.changetrack').style.display = "none";
 document.querySelector('.players').style.display = "none";
 document.querySelector('.cleartracks').style.display = "none";
 document.querySelector('.size').style.display = "none";
+document.querySelector('.player1nametext').style.display = "none";
+const username1 = document.getElementById("username");
+const username2 = document.getElementById("username2");
+username1.addEventListener("input", updateNames);
+username2.addEventListener("input", updateNames);
+const usernameInput = document.getElementById("username");
+const nameLabel = document.getElementById("namelabel");
+const nameLabel2 = document.getElementById("namelabel2");
 let score = 0;
 let settings = false;
 let started = false;
@@ -50,7 +58,7 @@ let laps = 0;
 let laps2 = 0;
 let performance = false;
 let twoplayer = false;
-let speedlabel = 0;
+speedlabel = 0;
 // car
 const car = {
   xPos: canvas.width / 2,
@@ -77,12 +85,48 @@ let level = "medium";
 document.querySelector('.dif').style.backgroundColor = "rgba(255, 239, 61, 1)";
 let carMaxSpeed = 6; // Default speed
 
+
 function setDifficulty(level) {
+
   if (level === "easy") carMaxSpeed = 4;
   else if (level === "medium") carMaxSpeed = 5;
   else if (level === "hard") carMaxSpeed = 7;
+  
 }
 setDifficulty(level);
+
+
+let textLength2 = document.getElementById("username2").value.length;
+let textLength = document.getElementById("username").value.length;
+
+function updateNames() {
+  const name1 = document.getElementById("username").value;
+  const name2 = document.getElementById("username2").value;
+  textLength = document.getElementById("username").value.length;
+  textLength2 = document.getElementById("username2").value.length;
+  // Update label text
+  document.getElementById("namelabel").textContent = name1;
+  document.getElementById("namelabel2").textContent = name2;
+  document.querySelector(".namelabel").style.left = (car.xPos - 3 - textLength ** 1.35) + "px";
+  document.querySelector(".namelabel2").style.left = (car2.xPos - 3 - textLength2 ** 1.35) + "px";
+  document.querySelector(".namelabel2").style.top = (car2.yPos - 25) + "px";
+  document.querySelector(".namelabel").style.top = (car.yPos - 25) + "px";
+  // Show/hide label based on input length
+  if (name1.length > 0) {
+    document.getElementById("namelabel").style.display = "block";
+  } else {
+    document.getElementById("namelabel").style.display = "none";
+  }
+  if (name2.length > 0) {
+    document.getElementById("namelabel2").style.display = "block";
+  } else {
+    document.getElementById("namelabel2").style.display = "none";
+  }
+}
+
+
+
+
 
 // Constant car data
 const carConstants = {
@@ -265,15 +309,7 @@ if (freedrive) {
 }
 };
 
-document.querySelector('.speed').addEventListener('click', () => {
-  if (shown) {
-    shown = false;
-    document.querySelector(".speedcar").style.display = "none";
-  } else {
-    document.querySelector(".speedcar").style.display = "block";
-    shown = true;
-  }
-});
+
 
 // sets the track
 
@@ -336,11 +372,13 @@ document.querySelector('.settings').addEventListener('click', () => {
     document.querySelector('.players').style.display = "none";
     document.querySelector('.cleartracks').style.display = "none";
     document.querySelector('.settings').style.backgroundColor = "rgba(179, 179, 179, 0.86)";
+    document.querySelector('.player1nametext').style.display = "none";
   } else {
     settings = true;
     headerRef.style.display = "flex";
     hideTitle = false; 
     document.querySelector('.size').style.display = "block";
+    document.querySelector('.player1nametext').style.display = "block";
     document.querySelector('.performance').style.display = "block";
     document.querySelector('.mute').style.display = "block";
     document.querySelector('.dif').style.display = "block";
@@ -361,6 +399,7 @@ document.addEventListener('keydown', function(event) {
       headerRef.style.display = "none";
       hideTitle = true; 
       document.querySelector('.size').style.display = "none";
+      document.querySelector('.player1nametext').style.display = "none";
       document.querySelector('.performance').style.display = "none";
       document.querySelector('.mute').style.display = "none";
       document.querySelector('.rect').style.display = "none";
@@ -375,6 +414,7 @@ document.addEventListener('keydown', function(event) {
       headerRef.style.display = "flex";
       hideTitle = false; 
       document.querySelector('.size').style.display = "block";
+      document.querySelector('.player1nametext').style.display = "block";
       document.querySelector('.mute').style.display = "block";
       document.querySelector('.performance').style.display = "block";
       document.querySelector('.dif').style.display = "block";
@@ -394,14 +434,15 @@ document.querySelector('.performance').addEventListener('click', () => {
     
     performance = false;
     if (!twoplayer) {
-      document.querySelector(".speedcar").style.display = "block";
+      document.querySelector(".namelabel").style.display = "block";
+      document.querySelector(".namelabel2").style.display = "none";
     }
     document.querySelector('.performance').style.backgroundColor = "rgba(255, 255, 255, 1)";
   } else {
     
     performance = true;
-    
-    document.querySelector(".speedcar").style.display = "none";
+    document.querySelector(".namelabel2").style.display = "none";
+    document.querySelector(".namelabel").style.display = "block";
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     document.querySelector('.performance').style.backgroundColor = "rgba(40, 255, 47, 1)";
   }
@@ -432,33 +473,26 @@ document.querySelector('.size').addEventListener('click', () => {
 
   if (size === 1) {
     size = 2;
-    document.querySelector('.size').style.backgroundColor = "yellow";
+    document.querySelector('.size').style.backgroundColor = "limegreen";
     buttons.forEach(btn => {
       btn.style.width = "6.5rem";
       btn.style.height = "6.5rem";
     });
   } else if (size === 2) {
-    size = 3;
-    document.querySelector('.size').style.backgroundColor = "limegreen";
-    buttons.forEach(btn => {
-      btn.style.width = "8rem";
-      btn.style.height = "8rem";
-    });
-  } else {
     size = 1;
-    document.querySelector('.size').style.backgroundColor = "red";
+    document.querySelector('.size').style.backgroundColor = "yellow";
     buttons.forEach(btn => {
       btn.style.width = "5rem";
       btn.style.height = "5rem";
     });
-  }
+  } 
 });
 
 
 // changes amt of players
 document.querySelector('.players').addEventListener('click', () => {
   if (twoplayer) {
-    document.querySelector(".speedcar").style.display = "block";
+    document.querySelector(".namelabel").style.display = "block";
     twoplayer = false;
     document.querySelector('.mobile-controls').style.display = "flex";
     started2 = false;
@@ -472,7 +506,9 @@ document.querySelector('.players').addEventListener('click', () => {
     document.querySelector(".players").textContent = "Players: 1";
   } else {
     twoplayer = true;
-    document.querySelector(".speedcar").style.display = "none";
+    if (textLength2 > 0) {
+      document.querySelector(".namelabel2").style.display = "block";
+    }
     document.querySelector('.mobile-controls').style.display = "none";
     document.querySelector(".players").textContent = "Players: 2";
   }
@@ -847,9 +883,11 @@ const updateCar = () => {
       }
     });
     absy = Math.abs(car.angle);
-    document.querySelector(".speedcar").style.top = (car.yPos - 25) + "px";
-    document.querySelector(".speedcar").style.left = (car.xPos - 19) + "px";
-    document.querySelector(".speedcar").textContent = `${speedlabel}mph`;
+    document.querySelector(".namelabel").style.top = (car.yPos - 25) + "px";
+    document.querySelector(".namelabel").style.left = (car.xPos - 2 - textLength ** 1.35) + "px";
+
+    
+    
     if (twoplayer) {
       document.querySelector(".bestscore").textContent = `Best Score: 0`;
       document.querySelector(".prevscore").textContent = `Previous Score: 0`;
@@ -1329,6 +1367,10 @@ const updateCar2 = () => {
 
       }
     });
+
+  document.querySelector(".namelabel2").style.left = (car2.xPos - 2 - textLength2 ** 1.35) + "px";
+  document.querySelector(".namelabel2").style.top = (car2.yPos - 25) + "px";
+
     const drift2Intensity = Math.min(Math.abs(car2.driftAngle), 45);
     car2.isReversing = car2.speed >= 0 ? false : true;
 
@@ -1640,6 +1682,7 @@ const animationChecks = () => {
     updateCar2();
     renderCar2();
   } else if (!twoplayer) {
+    document.querySelector(".namelabel2").style.display = "none";
     document.querySelector(".speed").style.display = "block";
     document.querySelector(".player2-laps").style.display = "none";
     document.querySelector(".score-display").style.display = "block";
