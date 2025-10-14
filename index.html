@@ -25,10 +25,14 @@
   </head>
   <div class="outer-wrapper">
     <body>
+      
       <audio id="music" src="audio.mp3" autoplay loop></audio>
       <canvas width="1280px" height="720px"> </canvas>
       <div class="overlay">
-        <p class = speedcar>0mph</p>
+
+        <p class="namelabel" id="namelabel"></p> 
+        <p class="namelabel2" id="namelabel2"></p> 
+
         <header>
           <h1>Drift Racers</h1>
           
@@ -44,8 +48,12 @@
         <button class="mute">Audio</button>
         <button class="size">Button Size</button>
         <div class="rect"></div>
+        <div class="player1nametext">
+          <label for="username">Username:<br></label>
+          <input type="text" id="username" name="username" class="username" maxlength="15" placeholder="Enter player 1 username">
+          <input type="text" id="username2" name="username2" maxlength="15" class="username2" placeholder="Enter player 2 username">
+        </div>
         <div class="car">
-          
           <img class="car-img" src="car.png" draggable="false" />
         </div>
         <div class="car2">
