@@ -441,7 +441,7 @@ document.querySelector('.performance').addEventListener('click', () => {
   } else {
     
     performance = true;
-    document.querySelector(".namelabel2").style.display = "none";
+    document.querySelector(".namelabel2").style.display = "block";
     document.querySelector(".namelabel").style.display = "block";
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     document.querySelector('.performance').style.backgroundColor = "rgba(40, 255, 47, 1)";
