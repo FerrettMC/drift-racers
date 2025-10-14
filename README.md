@@ -19,6 +19,7 @@ A 2D drifting game written in native JavaScript using a bunch of math, `HTML <ca
 -Works on most screen sizes
 -Pause screen
 -MPH counters
+-Usernames
 
 And just improving the code.
 
