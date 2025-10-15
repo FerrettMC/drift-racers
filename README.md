@@ -7,19 +7,19 @@ A 2D drifting game written in native JavaScript using a bunch of math, `HTML <ca
 
 ## Add-ons by FerrettMC
 # Added:
--Racetracks
--Scoring
--Images
--Boundaries
--Performance
--Laps
--Different speeds
--Epic UI elements
--2 Player mode
--Works on most screen sizes
--Pause screen
--MPH counters
--Usernames
+-Racetracks<br>
+-Scoring<br>
+-Images<br>
+-Boundaries<br>
+-Performance<br>
+-Laps<br>
+-Different speeds<br>
+-Epic UI elements<br>
+-2 Player mode<br>
+-Works on most screen sizes<br>
+-Pause screen<br>
+-MPH counters<br>
+-Usernames<br>
 
 And just improving the code.
 
